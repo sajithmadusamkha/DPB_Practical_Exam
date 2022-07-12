@@ -1,0 +1,128 @@
+DROP DATABASE IF EXISTS ijse;
+CREATE DATABASE IF NOT EXISTS ijse;
+
+USE ijse;
+
+CREATE TABLE Student(
+  student_id VARCHAR(45),
+  student_name VARCHAR(45),
+  email TEXT,
+  contact VARCHAR(20),
+  address TEXT,
+  nic VARCHAR(45),
+  CONSTRAINT PRIMARY KEY (student_id)
+);
+
+CREATE TABLE Teacher(
+  teacher_id VARCHAR(45),
+  name VARCHAR(45),
+  nic VARCHAR(45),
+  contact VARCHAR(45),
+  address TEXT,
+  CONSTRAINT PRIMARY KEY (teacher_id)
+);
+
+CREATE TABLE Subject(
+  subject_id VARCHAR(45),
+  subject_name VARCHAR(45),
+  credit DOUBLE,
+  teacher_id VARCHAR(45),
+  CONSTRAINT PRIMARY KEY (subject_id),
+  CONSTRAINT FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE Course(
+  course_id VARCHAR(45),
+  course_name VARCHAR(45),
+  cost DECIMAL(8,2),
+  duration VARCHAR(45),
+  subject_id VARCHAR(45),
+  CONSTRAINT PRIMARY KEY (course_id),
+  CONSTRAINT FOREIGN KEY (subject_id) REFERENCES Subject(subject_id) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE Intake(
+  intake_id VARCHAR(45),
+  start_date DATE,
+  intakecol VARCHAR(45),
+  description VARCHAR(45),
+  course_id VARCHAR(45),
+  CONSTRAINT PRIMARY KEY (intake_id),
+  CONSTRAINT FOREIGN KEY (course_id) REFERENCES Course(course_id) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE Registration(
+  registration_id VARCHAR(45),
+  reg_date DATE,
+  student_id VARCHAR(45),
+  intake_id VARCHAR(45),
+  CONSTRAINT PRIMARY KEY (registration_id,intake_id),
+  CONSTRAINT FOREIGN KEY (student_id) REFERENCES Student(student_id) on Delete Cascade on Update Cascade,
+  CONSTRAINT FOREIGN KEY (intake_id) REFERENCES Intake(intake_id) on Delete Cascade on Update Cascade
+);
+
+CREATE TABLE Payment(
+  payment_id VARCHAR(45),
+  date DATE,
+  cost DECIMAL(8,2),
+  registration_id VARCHAR(45),
+  CONSTRAINT PRIMARY KEY (payment_id),
+  CONSTRAINT FOREIGN KEY (registration_id) REFERENCES Registration(registration_id) on Delete Cascade on Update Cascade
+);
+
+
+#--------------------Student------------------------------------------
+
+INSERT INTO Student VALUES('S001','Gotabaya','gohomegota@gmail.com','0784056789','Mirihana','1000065612');
+INSERT INTO Student VALUES('S002','Namal','225epa@gmail.com','0714254789','Panadura','1000065612');
+INSERT INTO Student VALUES('S003','Rajitha','medicinehora@gmail.com','0724066789','Mathara','1000065612');
+INSERT INTO Student VALUES('S004','Gammanpila','hora@gmail.com','0714055489','Kadawatha','1000065612');
+INSERT INTO Student VALUES('S005','Anura','lapaya@gmail.com','0714426789','Polonnaruwa','1000065612');
+
+#--------------------Teacher------------------------------------------
+
+INSERT INTO Teacher VALUES('T001','Bandula','1003565612','0783025789','Colombo');
+INSERT INTO Teacher VALUES('T002','Hirunika','2003565642','0714384789','Galle');
+INSERT INTO Teacher VALUES('T003','Jhon','1003235612','0783025789','Kadawatha');
+INSERT INTO Teacher VALUES('T004','Kamal','1003224612','0715384789','Gonahena');
+INSERT INTO Teacher VALUES('T005','Chandupa','1003565612','0723025739','Gampaha');
+
+#--------------------Subject------------------------------------------
+
+INSERT INTO Subject VALUES('L001','DBP',98,'T001');
+INSERT INTO Subject VALUES('L002','PRF',75,'T002');
+INSERT INTO Subject VALUES('L003','Leyerd Architecture',100,'T001');
+INSERT INTO Subject VALUES('L004','Hibernate',90,'T003');
+INSERT INTO Subject VALUES('L005','REWAD',80,'T005');
+
+#--------------------Course------------------------------------------
+
+INSERT INTO Course VALUES('C001','GDSE',360000.00,'Two Years','L001');
+INSERT INTO Course VALUES('C002','DEP','460000.00','Six Months','L002');
+INSERT INTO Course VALUES('C003','RWAD',160000.00,'Six Months','L005');
+INSERT INTO Course VALUES('C004','Lorem','250000.00','Six Months','L003');
+INSERT INTO Course VALUES('C005','Lorem',60000.00,'Two Years','L004');
+
+#--------------------Intake------------------------------------------
+
+INSERT INTO Intake VALUES('I001','2022-2-15','Lorem Ipsum','Lorem Ipsum','C001');
+INSERT INTO Intake VALUES('I002','2022-3-23','Lorem Ipsum','Lorem Ipsum','C002');
+INSERT INTO Intake VALUES('I003','2022-4-01','Lorem Ipsum','Lorem Ipsum','C002');
+INSERT INTO Intake VALUES('I004','2022-4-23','Lorem Ipsum','Lorem Ipsum','C002');
+INSERT INTO Intake VALUES('I005','2022-5-02','Lorem Ipsum','Lorem Ipsum','C002');
+
+#--------------------Registration------------------------------------------
+
+INSERT INTO Registration VALUES('R001','2022-2-01','S001','I001');
+INSERT INTO Registration VALUES('R002','2022-3-01','S002','I002');
+INSERT INTO Registration VALUES('R003','2022-3-06','S004','I003');
+INSERT INTO Registration VALUES('R004','2022-4-01','S005','I004');
+INSERT INTO Registration VALUES('R005','2022-4-23','S003','I005');
+
+#--------------------Payment------------------------------------------
+
+INSERT INTO Payment VALUES('P001','2022-2-01',40000.00,'R001');
+INSERT INTO Payment VALUES('P002','2022-4-03',50000.00,'R002');
+INSERT INTO Payment VALUES('P003','2022-4-07',50000.00,'R003');
+INSERT INTO Payment VALUES('P004','2022-5-01',50000.00,'R004');
+INSERT INTO Payment VALUES('P005','2022-4-23',50000.00,'R005');
