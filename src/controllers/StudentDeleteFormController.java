@@ -35,6 +35,7 @@ public class StudentDeleteFormController {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
+        cleaFields();
     }
 
     private void search() throws SQLException, ClassNotFoundException {
@@ -48,5 +49,14 @@ public class StudentDeleteFormController {
         } else {
             new Alert(Alert.AlertType.WARNING,"Empty Result!...").show();
         }
+    }
+
+    private void cleaFields(){
+        txtId.setText(null);
+        txtName.setText(null);
+        txtEmail.setText(null);
+        txtContactNo.setText(null);
+        txtAddress.setText(null);
+        txtNic.setText(null);
     }
 }

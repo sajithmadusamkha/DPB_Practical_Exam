@@ -50,5 +50,15 @@ public class UpdateStudentFormController {
             e.printStackTrace();
             new Alert(Alert.AlertType.ERROR,e.getMessage()).show();
         }
+        cleaFields();
+    }
+
+    private void cleaFields(){
+        txtId.setText(null);
+        txtName.setText(null);
+        txtEmail.setText(null);
+        txtContactNo.setText(null);
+        txtAddress.setText(null);
+        txtNic.setText(null);
     }
 }
