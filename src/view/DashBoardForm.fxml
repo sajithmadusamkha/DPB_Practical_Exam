@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="332.0" prefWidth="338.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DashBoardFormController">
+   <children>
+      <JFXButton layoutX="102.0" layoutY="88.0" onAction="#btnSaveOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: #53BF9D;" text="Save Student" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </JFXButton>
+      <Label layoutX="133.0" layoutY="14.0" text="IJSE" textFill="#ff2828">
+         <font>
+            <Font name="Arial Bold" size="33.0" />
+         </font>
+      </Label>
+      <Label layoutX="77.0" layoutY="52.0" text="Student Management System">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </Label>
+      <JFXButton layoutX="102.0" layoutY="134.0" onAction="#btnUpdateOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: #53BF9D;" text="Update Student" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="102.0" layoutY="183.0" onAction="#btnDeleteOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: #53BF9D;" text="Delete Student" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="102.0" layoutY="232.0" onAction="#btnLoadAllStudentOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: #53BF9D;" text="Load All Student" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </JFXButton>
+      <JFXButton layoutX="102.0" layoutY="279.0" onAction="#btnSeachStudentOnAction" prefHeight="31.0" prefWidth="135.0" style="-fx-background-color: #53BF9D;" text="Search Student" textFill="WHITE">
+         <font>
+            <Font name="Arial" size="14.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>
