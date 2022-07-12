@@ -17,7 +17,8 @@ public class DashBoardFormController {
         setUi("UpdateStudentForm");
     }
 
-    public void btnDeleteOnAction(ActionEvent actionEvent) {
+    public void btnDeleteOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("StudentDeleteOnAction");
     }
 
     public void btnLoadAllStudentOnAction(ActionEvent actionEvent) {

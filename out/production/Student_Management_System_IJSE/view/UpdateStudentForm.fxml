@@ -21,7 +21,7 @@
       <JFXTextField fx:id="txtContactNo" layoutX="30.0" layoutY="233.0" prefHeight="23.0" prefWidth="324.0" promptText="Contact No." />
       <JFXTextField fx:id="txtAddress" layoutX="30.0" layoutY="281.0" prefHeight="23.0" prefWidth="324.0" promptText="Address" />
       <JFXTextField fx:id="txtNic" layoutX="30.0" layoutY="329.0" prefHeight="23.0" prefWidth="324.0" promptText="NIC No." />
-      <JFXButton layoutX="141.0" layoutY="380.0" onAction="#btnupdateOnAction" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #00ADB5;" text="Save" textFill="WHITE">
+      <JFXButton layoutX="141.0" layoutY="380.0" onAction="#btnupdateOnAction" prefHeight="32.0" prefWidth="103.0" style="-fx-background-color: #00ADB5;" text="Update" textFill="WHITE">
          <font>
             <Font name="Arial" size="14.0" />
          </font>
