@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="450.0" prefWidth="663.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.LoadAllStudentFormController">
+   <children>
+      <Label layoutX="20.0" layoutY="14.0" text="Load All Student's">
+         <font>
+            <Font name="Arial Bold" size="18.0" />
+         </font>
+      </Label>
+      <Separator layoutX="16.0" layoutY="42.0" prefHeight="0.0" prefWidth="637.0" />
+      <TableView fx:id="tblStudent" layoutX="16.0" layoutY="66.0" prefHeight="360.0" prefWidth="615.0">
+        <columns>
+          <TableColumn prefWidth="75.0" text="Student_Id" />
+          <TableColumn prefWidth="103.0" text="Student_name" />
+            <TableColumn prefWidth="103.0" text="Student_email" />
+            <TableColumn prefWidth="103.0" text="Student_contact" />
+            <TableColumn prefWidth="112.0" text="Student_address" />
+            <TableColumn prefWidth="117.0" text="Student_Nic" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>

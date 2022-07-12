@@ -21,10 +21,8 @@ public class DashBoardFormController {
         setUi("StudentDeleteOnAction");
     }
 
-    public void btnLoadAllStudentOnAction(ActionEvent actionEvent) {
-    }
-
-    public void btnSeachStudentOnAction(ActionEvent actionEvent) {
+    public void btnLoadAllStudentOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("LoadAllStudentForm");
     }
 
     private void setUi(String url) throws IOException {
