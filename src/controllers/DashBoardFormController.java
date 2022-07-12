@@ -13,7 +13,8 @@ public class DashBoardFormController {
         setUi("SaveStudentForm");
     }
 
-    public void btnUpdateOnAction(ActionEvent actionEvent) {
+    public void btnUpdateOnAction(ActionEvent actionEvent) throws IOException {
+        setUi("UpdateStudentForm");
     }
 
     public void btnDeleteOnAction(ActionEvent actionEvent) {
